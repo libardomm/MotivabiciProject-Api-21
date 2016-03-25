@@ -16,6 +16,7 @@ public class MainActivity extends ActionBarActivity {
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, ubicacion.class));
             }
+
         });
 
     }

@@ -29,7 +29,8 @@ public class ubicacion extends ActionBarActivity implements LocationListener {
     String cadenalocation2;
    //calcular tiempo transcurrido
     Chronometer cronometro;
-    long tiempoTranscurrido;
+    Long tiempoTranscurrido;
+    String tiempoFinal;//segundos
 
     //velocidad media
     Float velocidadMedia;
@@ -62,13 +63,20 @@ public class ubicacion extends ActionBarActivity implements LocationListener {
         //tiempo
         cronometro = (Chronometer) findViewById(R.id.cronometro);
 
+
+        botonEmpezar.setEnabled(true);
+        botonTerminar.setEnabled(false);
+        botonRestablecer.setEnabled(false);
+        botonDistancia.setEnabled(false);
+        botonvelocidad.setEnabled(false);
+
     }
     //metodos adicionaeles
 
     @Override
     protected void onResume() {
         super.onResume();
-        locationManager.requestLocationUpdates(provider,400,1,this);
+        locationManager.requestLocationUpdates(provider, 400, 1, this);
     }
 
     @Override
@@ -134,14 +142,16 @@ public void empezarRecorrido(View v){
         cronometro.stop();
         //Guarda el tiempo transcurrido en una variable tipo long
         tiempoTranscurrido = SystemClock.elapsedRealtime() - cronometro.getBase();
-        String tiempoFinal = String.valueOf(((tiempoTranscurrido / 1000) * 0.000277778));
-        Log.i("Tiempo sape", String.valueOf(tiempoTranscurrido));
+         tiempoFinal = String.valueOf(((tiempoTranscurrido/1000)  )); //tiempo en segundos
+        tiempoTranscurrido= Long.valueOf(tiempoFinal);
+        Log.i("Tiempo sape", String.valueOf(tiempoFinal));
 
         botonEmpezar.setEnabled(false);
         botonTerminar.setEnabled(false);
         botonRestablecer.setEnabled(true);
         botonDistancia.setEnabled(true);
         botonvelocidad.setEnabled(false);
+        calculoCalorias();
 
     }
     public void restablecer(View v){
@@ -164,7 +174,7 @@ public void empezarRecorrido(View v){
         botonvelocidad.setEnabled(true);
     }
     public  void velocidadMedia(View v){
-        velocidadMedia=distanciaEnMetros/tiempoTranscurrido;
+        velocidadMedia=distanciaEnMetros/tiempoTranscurrido;//metros por segundo
 
         Toast.makeText(getApplicationContext(),velocidadMedia.toString(),Toast.LENGTH_SHORT).show();
 
@@ -173,6 +183,13 @@ public void empezarRecorrido(View v){
         botonRestablecer.setEnabled(true);
         botonDistancia.setEnabled(false);
         botonvelocidad.setEnabled(false);
+    }
+    public void calculoCalorias(){
+        Double calorias;
+        Double t= (Double.valueOf(tiempoFinal))/3600;//tiempo en horas
+         calorias = (Double)(8 * 70 * t);
+        Toast.makeText(getApplicationContext(),"Calorias quemadas "+calorias.toString(),Toast.LENGTH_SHORT).show();
+
     }
 
 
