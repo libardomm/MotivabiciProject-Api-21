@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.libardo.motivabiciproject.resumen_recorrido">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="RESUMEN DEL RECORRIDO"
+        android:id="@+id/resumenTextView"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:textAlignment="center" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:id="@+id/ejemploImageView"
+        android:src="@drawable/mapa"
+        android:layout_below="@+id/resumenTextView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:padding="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calorías quemadas:"
+        android:id="@+id/caloriasTextView"
+        android:layout_below="@+id/ejemploImageView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Velocidad promedio:"
+        android:id="@+id/velocidadTextView"
+        android:layout_marginTop="17dp"
+        android:layout_below="@+id/caloriasTextView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Duración del recorrido:"
+        android:id="@+id/duracionRecorridoTextView"
+        android:layout_marginTop="18dp"
+        android:layout_below="@+id/velocidadTextView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Altitud máxima alcanzada:"
+        android:id="@+id/altitudTextView"
+        android:layout_marginTop="19dp"
+        android:layout_below="@+id/duracionRecorridoTextView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Distancia recorrida:"
+        android:id="@+id/distanciaTextView"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/altitudEditText"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Comentarios:"
+        android:id="@+id/comentariosTextView"
+        android:layout_alignBottom="@+id/comentariosEditText"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="7dp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/caloriasEditText"
+        android:layout_alignBottom="@+id/velocidadTextView"
+        android:layout_marginBottom="24dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toRightOf="@+id/caloriasTextView"
+        android:layout_toEndOf="@+id/caloriasTextView" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/velocidadEditText"
+        android:layout_below="@+id/caloriasTextView"
+        android:layout_toRightOf="@+id/velocidadTextView"
+        android:layout_toEndOf="@+id/velocidadTextView" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/duracionEditText"
+        android:layout_below="@+id/velocidadTextView"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toRightOf="@+id/duracionRecorridoTextView"
+        android:layout_toEndOf="@+id/duracionRecorridoTextView" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/altitudEditText"
+        android:layout_below="@+id/duracionRecorridoTextView"
+        android:layout_toRightOf="@+id/altitudTextView"
+        android:layout_toEndOf="@+id/altitudTextView" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/distanciaEditText"
+        android:layout_below="@+id/altitudTextView"
+        android:layout_toRightOf="@+id/distanciaTextView"
+        android:layout_toEndOf="@+id/distanciaTextView"
+        android:textSize="10dp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/comentariosEditText"
+        android:layout_below="@+id/distanciaTextView"
+        android:layout_alignRight="@+id/altitudEditText"
+        android:layout_alignEnd="@+id/altitudEditText"
+        android:layout_toRightOf="@+id/comentariosTextView"
+        android:layout_toEndOf="@+id/comentariosTextView" />
+
+    <ImageButton
+        android:layout_width="110dp"
+        android:layout_height="40dp"
+        android:id="@+id/botonFacebook"
+        android:src="@drawable/compartir_facebook"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageButton
+        android:layout_width="110dp"
+        android:layout_height="40dp"
+        android:id="@+id/botonTwitter"
+        android:src="@drawable/compartir_twitter"
+        android:layout_alignTop="@+id/botonFacebook"
+        android:layout_toRightOf="@+id/botonFacebook"
+        android:layout_toEndOf="@+id/botonFacebook" />
+
+    <Button
+        android:layout_width="110dp"
+        android:layout_height="40dp"
+        android:id="@+id/botonGuardar"
+        android:src="@drawable/compartir_twitter"
+        android:text="GUARDAR"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:textSize="10dp" />
+
+</RelativeLayout>
