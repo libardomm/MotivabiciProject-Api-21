@@ -7,7 +7,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.libardo.motivabiciproject.ubicacion">
+    tools:context="com.example.libardo.motivabiciproject.ubicacion"
+    android:background="#02ad9a">
 
     <Button
         android:layout_width="wrap_content"
@@ -24,9 +25,9 @@
         android:layout_height="wrap_content"
         android:text="Terminar"
         android:id="@+id/bttTerminar"
-        android:layout_alignTop="@+id/bttIniciar"
-        android:layout_alignParentEnd="true"
-        android:onClick="TerminarRecorrido" />
+        android:onClick="TerminarRecorrido"
+        android:layout_above="@+id/bttDistancia"
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="wrap_content"
@@ -37,5 +38,32 @@
         android:layout_below="@+id/bttIniciar"
         android:layout_alignParentStart="true"
         android:onClick="calcularDistancia" />
+
+    <Chronometer
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/cronometro"
+        android:layout_above="@+id/bttTerminar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="49dp"
+        android:textSize="30dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="velocidadMedia"
+        android:id="@+id/bttVelocidadMedia"
+        android:layout_alignBottom="@+id/bttDistancia"
+        android:layout_alignParentEnd="true"
+        android:onClick="velocidadMedia" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Restablecer"
+        android:id="@+id/bttRestablecer"
+        android:layout_alignBottom="@+id/bttTerminar"
+        android:layout_alignParentEnd="true"
+        android:onClick="restablecer" />
 
 </RelativeLayout>
