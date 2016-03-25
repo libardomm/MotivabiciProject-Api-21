@@ -19,7 +19,20 @@
             </intent-filter>
         </activity>
         <activity android:name=".ubicacion" />
-        <activity android:name=".resumen_recorrido"></activity>
+        <activity android:name=".resumen_recorrido" />
+        <activity
+            android:name=".FullscreenActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_fullscreen"
+            android:theme="@style/FullscreenTheme" />
+        <activity android:name=".altitud_maxima" />
+        <activity android:name=".calorias" />
+        <activity android:name=".distancia_recorrida" />
+        <activity android:name=".duracion_recorrido" />
+        <activity android:name=".post_login" />
+        <activity android:name=".recorrido" />
+        <activity android:name=".recorridos_anteriores" />
+        <activity android:name=".registro"></activity>
     </application>
 
 </manifest>

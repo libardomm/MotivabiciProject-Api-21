@@ -7,30 +7,30 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.libardo.motivabiciproject.MainActivity"
+    tools:context="com.example.libardomunoz.motivabici.MainActivity"
     android:background="#02ad9a">
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Iniciar Sesión"
-        android:id="@+id/bttIniciarSesion"
+        android:id="@+id/iniciarSesionButton"
         android:layout_marginLeft="34dp"
         android:layout_marginStart="34dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:nestedScrollingEnabled="true"
-        />
+        android:onClick="iniciarSesionFunction" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Registrarse"
-        android:id="@+id/bttRegistrarse"
-        android:layout_alignTop="@+id/bttIniciarSesion"
-        android:layout_toRightOf="@+id/bttIniciarSesion"
-        android:layout_toEndOf="@+id/bttIniciarSesion"
+        android:id="@+id/registrarseButton"
+        android:layout_alignTop="@+id/iniciarSesionButton"
+        android:layout_toRightOf="@+id/iniciarSesionButton"
+        android:layout_toEndOf="@+id/iniciarSesionButton"
         android:layout_marginLeft="35dp"
         android:layout_marginStart="35dp" />
 
@@ -48,7 +48,7 @@
         android:elegantTextHeight="false" />
 
     <AutoCompleteTextView
-        android:id="@+id/ActEmail"
+        android:id="@+id/correoUsuarioTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="E-Mail"
@@ -63,18 +63,31 @@
         android:layout_alignParentEnd="true" />
 
     <EditText
+        android:id="@+id/contraseñaUsuarioTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:imeActionId="@+id/login"
+        android:imeActionLabel="Sign in"
+        android:imeOptions="actionUnspecified"
+        android:inputType="textPassword"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:background="#ccc5c5"
+        android:hint="Contraseña"
+        android:textSize="25dp"
+        android:layout_marginTop="33dp"
+        android:layout_below="@+id/correoUsuarioTextView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:ems="10"
-        android:id="@+id/edtPassword"
-        android:layout_below="@+id/ActEmail"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="45dp"
+        android:id="@+id/imagenBicicleta"
+        android:src="@drawable/bicicleta"
+        android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:background="#ccc5c5"
-        android:singleLine="true"
-        android:textSize="25dp" />
-
+        android:layout_below="@+id/contraseñaUsuarioTextView"
+        android:layout_above="@+id/iniciarSesionButton" />
 
 </RelativeLayout>

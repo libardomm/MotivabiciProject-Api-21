@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.libardomunoz.motivabici.Registro"
+    android:background="#02ad9a">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="FORMULARIO DE REGISTRO"
+        android:id="@+id/registroTextView"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textSize="25dp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/edtNombre"
+        android:layout_below="@+id/registroTextView"
+        android:layout_marginTop="32dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="false"
+        android:layout_toRightOf="@+id/nombreTextView"
+        android:layout_toEndOf="@+id/nombreTextView"
+        android:layout_alignParentStart="false" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:id="@+id/edtEmail"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/edtNombre"
+        android:layout_toRightOf="@+id/eMailTextView"
+        android:layout_toEndOf="@+id/eMailTextView" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/edtPass"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/edtEmail"
+        android:layout_alignRight="@+id/edtEmail"
+        android:layout_alignEnd="@+id/edtEmail"
+        android:layout_toRightOf="@+id/contraseñaTextView"
+        android:layout_toEndOf="@+id/contraseñaTextView"
+        android:layout_alignParentEnd="false" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nombre*:"
+        android:id="@+id/nombreTextView"
+        android:textSize="20dp"
+        android:layout_alignBaseline="@+id/edtNombre"
+        android:layout_alignBottom="@+id/edtNombre"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="E-Mail*:"
+        android:id="@+id/eMailTextView"
+        android:textSize="20dp"
+        android:layout_alignBaseline="@+id/edtEmail"
+        android:layout_alignBottom="@+id/edtEmail"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Contraseña*:"
+        android:id="@+id/contraseñaTextView"
+        android:textSize="20dp"
+        android:layout_alignBaseline="@+id/edtPass"
+        android:layout_alignBottom="@+id/edtPass"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/edtEdad"
+        android:layout_marginTop="16dp"
+        android:layout_below="@+id/edtPass"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toRightOf="@+id/edadTextView"
+        android:layout_toEndOf="@+id/edadTextView" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edad:"
+        android:id="@+id/edadTextView"
+        android:textSize="20dp"
+        android:layout_alignBaseline="@+id/edtEdad"
+        android:layout_alignBottom="@+id/edtEdad"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Peso*:"
+        android:id="@+id/pesoTextView"
+        android:layout_below="@+id/edtEdad"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="24dp"
+        android:textSize="20dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/edtPeso"
+        android:layout_alignBaseline="@+id/pesoTextView"
+        android:layout_alignBottom="@+id/pesoTextView"
+        android:layout_alignRight="@+id/edtEdad"
+        android:layout_alignEnd="@+id/edtEdad"
+        android:layout_toEndOf="@+id/pesoTextView"
+        android:layout_toRightOf="@+id/pesoTextView" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="(*) Campo obligatorio"
+        android:id="@+id/campoTextView"
+        android:layout_below="@+id/edtPeso"
+        android:layout_alignRight="@+id/edtPeso"
+        android:layout_alignEnd="@+id/edtPeso"
+        android:layout_marginTop="20dp"
+        android:textStyle="italic" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="REGISTRARSE"
+        android:id="@+id/enviarButton"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="26dp"
+        />
+
+</RelativeLayout>
