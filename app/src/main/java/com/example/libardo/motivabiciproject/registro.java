@@ -10,11 +10,14 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class registro extends ActionBarActivity {
+
     private EditText etNombre, etEmail, etPass, etEdad, etPeso;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);
+
         etNombre = (EditText) findViewById(R.id.edtNombre);
         etEmail = (EditText) findViewById(R.id.edtEmail);
         etPass = (EditText) findViewById(R.id.edtPass);
@@ -29,7 +32,6 @@ public class registro extends ActionBarActivity {
                 startActivity(new Intent(registro.this, post_login.class));
             }
         });
-
     }
 
     public void Registrar(View v){
@@ -58,5 +60,6 @@ public class registro extends ActionBarActivity {
         // ponemos los campos a vacío para insertar el siguiente usuario
         etNombre.setText(""); etEmail.setText(""); etPass.setText(""); etEdad.setText(""); etPeso.setText("");
         Toast.makeText(this, "Datos del usuario cargados", Toast.LENGTH_SHORT).show();
+
     }
 }

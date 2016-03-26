@@ -37,8 +37,9 @@
         android:layout_height="wrap_content"
         android:text="Calorías quemadas:"
         android:id="@+id/caloriasTextView"
-        android:layout_below="@+id/ejemploImageView"
-        android:layout_alignParentLeft="true"
+        android:gravity="center_vertical"
+        android:layout_alignBottom="@+id/caloriasEditText"
+        android:layout_alignTop="@+id/caloriasEditText"
         android:layout_alignParentStart="true" />
 
     <TextView
@@ -46,105 +47,105 @@
         android:layout_height="wrap_content"
         android:text="Velocidad promedio:"
         android:id="@+id/velocidadTextView"
-        android:layout_marginTop="17dp"
-        android:layout_below="@+id/caloriasTextView"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignBottom="@+id/velocidadEditText"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/velocidadEditText"
+        android:gravity="center_vertical" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Duración del recorrido:"
         android:id="@+id/duracionRecorridoTextView"
-        android:layout_marginTop="18dp"
-        android:layout_below="@+id/velocidadTextView"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_alignBottom="@+id/duracionEditText"
+        android:gravity="center_vertical"
+        android:layout_alignTop="@+id/duracionEditText" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Altitud máxima alcanzada:"
         android:id="@+id/altitudTextView"
-        android:layout_marginTop="19dp"
-        android:layout_below="@+id/duracionRecorridoTextView"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_alignBottom="@+id/altitudEditText"
+        android:gravity="center_vertical"
+        android:layout_alignTop="@+id/altitudEditText" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Distancia recorrida:"
         android:id="@+id/distanciaTextView"
-        android:layout_marginTop="10dp"
-        android:layout_below="@+id/altitudEditText"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_alignBottom="@+id/distanciaEditText"
+        android:layout_toStartOf="@+id/caloriasEditText"
+        android:layout_alignTop="@+id/distanciaEditText"
+        android:gravity="center_vertical" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Comentarios:"
         android:id="@+id/comentariosTextView"
-        android:layout_alignBottom="@+id/comentariosEditText"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="7dp" />
+        android:layout_alignBottom="@+id/comentariosEditText"
+        android:layout_alignTop="@+id/comentariosEditText"
+        android:textAlignment="center"
+        android:gravity="center_vertical" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/caloriasEditText"
-        android:layout_alignBottom="@+id/velocidadTextView"
-        android:layout_marginBottom="24dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_toRightOf="@+id/caloriasTextView"
-        android:layout_toEndOf="@+id/caloriasTextView" />
+        android:textSize="15dp"
+        android:layout_above="@+id/velocidadTextView"
+        android:layout_toEndOf="@+id/velocidadTextView" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/velocidadEditText"
-        android:layout_below="@+id/caloriasTextView"
-        android:layout_toRightOf="@+id/velocidadTextView"
+        android:textSize="15dp"
+        android:layout_above="@+id/duracionRecorridoTextView"
         android:layout_toEndOf="@+id/velocidadTextView" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/duracionEditText"
-        android:layout_below="@+id/velocidadTextView"
-        android:layout_alignParentRight="true"
+        android:textSize="15dp"
+        android:layout_above="@+id/altitudTextView"
         android:layout_alignParentEnd="true"
-        android:layout_toRightOf="@+id/duracionRecorridoTextView"
         android:layout_toEndOf="@+id/duracionRecorridoTextView" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/altitudEditText"
-        android:layout_below="@+id/duracionRecorridoTextView"
-        android:layout_toRightOf="@+id/altitudTextView"
+        android:textSize="15dp"
+        android:layout_above="@+id/distanciaEditText"
+        android:layout_alignParentEnd="true"
         android:layout_toEndOf="@+id/altitudTextView" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/distanciaEditText"
-        android:layout_below="@+id/altitudTextView"
-        android:layout_toRightOf="@+id/distanciaTextView"
-        android:layout_toEndOf="@+id/distanciaTextView"
-        android:textSize="10dp" />
+        android:textSize="15dp"
+        android:layout_above="@+id/comentariosEditText"
+        android:layout_alignStart="@+id/velocidadEditText" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/comentariosEditText"
-        android:layout_below="@+id/distanciaTextView"
-        android:layout_alignRight="@+id/altitudEditText"
-        android:layout_alignEnd="@+id/altitudEditText"
-        android:layout_toRightOf="@+id/comentariosTextView"
+        android:textSize="15dp"
+        android:layout_above="@+id/botonFacebook"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="43dp"
         android:layout_toEndOf="@+id/comentariosTextView" />
 
     <ImageButton

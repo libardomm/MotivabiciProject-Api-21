@@ -6,26 +6,98 @@
     <statePointEntry>
       <state      
         class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "com.example.libardo.motivabiciproject.distancia_recorrida"/>
+      <point      
+        x = "2588"      
+        y = "1468"/>
+    </statePointEntry>
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "com.example.libardo.motivabiciproject.FullscreenActivity"/>
+      <point      
+        x = "916"      
+        y = "2888"/>
+    </statePointEntry>
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "com.example.libardo.motivabiciproject.registro"/>
+      <point      
+        x = "1756"      
+        y = "2884"/>
+    </statePointEntry>
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "com.example.libardo.motivabiciproject.altitud_maxima"/>
+      <point      
+        x = "64"      
+        y = "2884"/>
+    </statePointEntry>
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
         className = "com.example.libardo.motivabiciproject.ubicacion"/>
       <point      
-        x = "1412"      
-        y = "136"/>
+        x = "920"      
+        y = "40"/>
+    </statePointEntry>
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "com.example.libardo.motivabiciproject.duracion_recorrido"/>
+      <point      
+        x = "1760"      
+        y = "1468"/>
+    </statePointEntry>
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "com.example.libardo.motivabiciproject.calorias"/>
+      <point      
+        x = "920"      
+        y = "1468"/>
     </statePointEntry>
     <statePointEntry>
       <state      
         class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
         className = "com.example.libardo.motivabiciproject.MainActivity"/>
       <point      
-        x = "550"      
-        y = "150"/>
+        x = "76"      
+        y = "40"/>
+    </statePointEntry>
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "com.example.libardo.motivabiciproject.post_login"/>
+      <point      
+        x = "1756"      
+        y = "40"/>
     </statePointEntry>
     <statePointEntry>
       <state      
         class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
         className = "com.example.libardo.motivabiciproject.resumen_recorrido"/>
       <point      
+        x = "60"      
+        y = "1468"/>
+    </statePointEntry>
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "com.example.libardo.motivabiciproject.recorridos_anteriores"/>
+      <point      
+        x = "2592"      
+        y = "40"/>
+    </statePointEntry>
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "com.example.libardo.motivabiciproject.recorrido"/>
+      <point      
         x = "500"      
-        y = "1480"/>
+        y = "9760"/>
     </statePointEntry>
   </locations>
 </navigationModel>

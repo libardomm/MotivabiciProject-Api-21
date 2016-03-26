@@ -21,7 +21,8 @@ import java.util.Arrays;
 import java.util.List;
 
 public class ubicacion extends ActionBarActivity implements LocationListener {
-  LocationManager locationManager;
+
+    LocationManager locationManager;
     String provider;
     Button botonEmpezar;
     Button botonTerminar;
@@ -81,7 +82,8 @@ public class ubicacion extends ActionBarActivity implements LocationListener {
         });
 
     }
-    //metodos adicionaeles
+
+    //métodos adicionales
 
     @Override
     protected void onResume() {
@@ -95,7 +97,7 @@ public class ubicacion extends ActionBarActivity implements LocationListener {
         locationManager.removeUpdates(this);
     }
 
-    //gps-----------------------------------------------------
+    //GPS
     @Override
     public void onLocationChanged(Location location) {
         Double lat=location.getLatitude();
@@ -137,9 +139,6 @@ public void empezarRecorrido(View v){
     botonDistancia.setEnabled(false);
     botonvelocidad.setEnabled(false);
 
-
-
-
 }
     public  void TerminarRecorrido(View v){
 
@@ -171,11 +170,10 @@ public void empezarRecorrido(View v){
         botonRestablecer.setEnabled(false);
         botonDistancia.setEnabled(false);
         botonvelocidad.setEnabled(false);
-
     }
 
     public void calcularDistancia(View v){
-         distanciaEnMetros = location1.distanceTo(location2);
+        distanciaEnMetros = location1.distanceTo(location2);
         Toast.makeText(getApplicationContext(),distanciaEnMetros.toString(),Toast.LENGTH_SHORT).show();
         botonEmpezar.setEnabled(false);
         botonTerminar.setEnabled(false);
@@ -201,13 +199,11 @@ public void empezarRecorrido(View v){
         Toast.makeText(getApplicationContext(),"Calorias quemadas "+calorias.toString(),Toast.LENGTH_SHORT).show();
 
     }
-public void maximaAltitud(){
-    location2=locationManager.getLastKnownLocation(provider);
-    cadenalocation1= String.valueOf(location2.getAltitude());
-    Toast.makeText(getApplicationContext(),cadenalocation2,Toast.LENGTH_SHORT).show();
 
-
-
-}
+    public void maximaAltitud(){
+        location2=locationManager.getLastKnownLocation(provider);
+        cadenalocation1= String.valueOf(location2.getAltitude());
+        Toast.makeText(getApplicationContext(),cadenalocation2,Toast.LENGTH_SHORT).show();
+    }
 
 }

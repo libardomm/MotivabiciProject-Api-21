@@ -3,10 +3,7 @@ package com.example.libardo.motivabiciproject;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 public class MainActivity extends ActionBarActivity {
@@ -21,7 +18,7 @@ public class MainActivity extends ActionBarActivity {
         findViewById(R.id.tituloMotivaBici).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //startActivity(new Intent(MainActivity.this, FullscreenActivity.class));
+                startActivity(new Intent(MainActivity.this, FullscreenActivity.class));
             }
         });
 
@@ -33,6 +30,7 @@ public class MainActivity extends ActionBarActivity {
             }
         });
 
+
         //Al hacer click sobre el botón "Registrase" envía a la actividad de formulario de registro
         findViewById(R.id.registrarseButton).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,8 +38,6 @@ public class MainActivity extends ActionBarActivity {
                 startActivity(new Intent(MainActivity.this, registro.class));
             }
         });
-
-
 
     }
 

@@ -12,6 +12,8 @@ public class resumen_recorrido extends ActionBarActivity {
 
     Bundle datos;
     String tiempoRecorrido;
+    String velocidadMedia;
+    String distanciaRecorrido;
     TextView caloriasRecorrido;
     TextView velocidadPromedio;
     TextView duracionRecorrido;
@@ -39,10 +41,7 @@ public class resumen_recorrido extends ActionBarActivity {
             }
         });
 
-        //Al tocar el texto "Velocidad Promedio" envía a la actividad de calorías
-
-
-        //Al tocar el texto "Duración del Recorrido" envía a la actividad de calorías
+        //Al tocar el texto "Duración del Recorrido" envía a la actividad de duracion_recorrido
         findViewById(R.id.duracionRecorridoTextView).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -50,7 +49,7 @@ public class resumen_recorrido extends ActionBarActivity {
             }
         });
 
-        //Al tocar el texto "Distancia recorrida" envía a la actividad de calorías
+        //Al tocar el texto "Distancia recorrida" envía a la actividad de distancia_recorrida
         findViewById(R.id.distanciaTextView).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -58,7 +57,7 @@ public class resumen_recorrido extends ActionBarActivity {
             }
         });
 
-        //Al tocar el texto "Altitud máxima" envía a la actividad de calorías
+        //Al tocar el texto "Altitud máxima" envía a la actividad de altitud_maxima
         findViewById(R.id.altitudTextView).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -94,6 +93,13 @@ public class resumen_recorrido extends ActionBarActivity {
         String Segundos = df2.format(segundos);
         duracionRecorrido.setText(Horas + " h: "+ Minutos + " min: " + Segundos + " seg");
 
+        //VER LA VELOCIDAD MEDIA EN LA PANTALLA DE RESUMEN DEL RECORRIDO
+        velocidadMedia = datos.getString("velocidadMedia");
+        velocidadPromedio.setText(velocidadMedia+" [m/s]");
+
+        //VER LA DISTANCIA RECORRIDA EN LA PANTALLA DE RESUMEN DEL RECORRIDO
+        distanciaRecorrido = datos.getString("distanciaRecorrido");
+        distanciaRecorrida.setText(distanciaRecorrido+" [m]");
 
         caloriasRecorrido.setEnabled(false);
         velocidadPromedio.setEnabled(false);
