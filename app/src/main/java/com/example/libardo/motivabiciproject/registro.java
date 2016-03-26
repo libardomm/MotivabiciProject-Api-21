@@ -36,7 +36,7 @@ public class registro extends ActionBarActivity {
 
     public void Registrar(View v){
 
-        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "AplicacionBD", null, 1);
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this);
         SQLiteDatabase bd = admin.getWritableDatabase();
 
         String email = etEmail.getText().toString();
