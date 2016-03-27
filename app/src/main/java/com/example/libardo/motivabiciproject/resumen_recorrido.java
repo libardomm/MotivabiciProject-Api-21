@@ -19,11 +19,15 @@ public class resumen_recorrido extends ActionBarActivity {
     TextView duracionRecorrido;
     TextView altitudMaxima;
     TextView distanciaRecorrida;
+    Float dist;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resumen_recorrido);
+
+
+
 
         //Al pulsar el botón "Finalizar recorrido" pasa a la actividad de resumen del recorrido de la aplicación
         findViewById(R.id.botonGuardar).setOnClickListener(new View.OnClickListener() {
@@ -93,13 +97,22 @@ public class resumen_recorrido extends ActionBarActivity {
         String Segundos = df2.format(segundos);
         duracionRecorrido.setText(Horas + " h: "+ Minutos + " min: " + Segundos + " seg");
 
-        //VER LA VELOCIDAD MEDIA EN LA PANTALLA DE RESUMEN DEL RECORRIDO
-        velocidadMedia = datos.getString("velocidadMedia");
-        velocidadPromedio.setText(velocidadMedia+" [m/s]");
+
 
         //VER LA DISTANCIA RECORRIDA EN LA PANTALLA DE RESUMEN DEL RECORRIDO
+        recorrido rec=new recorrido();
+
+        Float dist=rec.calcularDistancia();
         distanciaRecorrido = datos.getString("distanciaRecorrido");
-        distanciaRecorrida.setText(distanciaRecorrido+" [m]");
+        distanciaRecorrida.setText(dist+" [m]");
+
+        //VER LA VELOCIDAD MEDIA EN LA PANTALLA DE RESUMEN DEL RECORRIDO
+        Double tiempoTotalSegundos;
+        tiempoTotalSegundos=time;
+        Double veloci;
+        veloci=dist/tiempoTotalSegundos;
+        //velocidadMedia = datos.getString("velocidadMedia");
+        velocidadPromedio.setText(veloci+" [m/s]");
 
         caloriasRecorrido.setEnabled(false);
         velocidadPromedio.setEnabled(false);

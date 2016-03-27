@@ -25,8 +25,8 @@ public class recorrido extends ActionBarActivity implements LocationListener {
 
     LocationManager locationManager;
     String provider;
-    Location location1 = new Location("l1");
-    Location location2 = new Location("l2");
+    Location location1;
+    Location location2;
     String cadenalocation1;
     String cadenalocation2;
     String a;
@@ -59,21 +59,22 @@ public class recorrido extends ActionBarActivity implements LocationListener {
         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         provider = locationManager.getBestProvider(new Criteria(), false);
         Location location = locationManager.getLastKnownLocation(provider);
-
+        String altitud;
+        altitud= String.valueOf(location.getAltitude());
         if (location != null) {
             Toast.makeText(getApplicationContext(), "Si hay ubicacion", Toast.LENGTH_SHORT).show();
         } else {
-            Toast.makeText(getApplicationContext(), "Si hay ubicacion", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "No hay ubicacion", Toast.LENGTH_SHORT).show();
 
         }
+        Toast.makeText(getApplicationContext(),"Altitud es "+String.valueOf(location.getAltitude()),Toast.LENGTH_SHORT);
     }
 
     public void iniciarRecorrido(View view) {
-        /*
-        location1 = locationManager.getLastKnownLocation(provider);
-        cadenalocation1 = String.valueOf(location1.getAltitude());
-        Toast.makeText(getApplicationContext(),cadenalocation1,Toast.LENGTH_SHORT).show();
-        */
+
+        location1=locationManager.getLastKnownLocation(provider);
+        cadenalocation1= String.valueOf(location1.getAltitude());
+        //Toast.makeText(getApplicationContext(),cadenalocation1,Toast.LENGTH_SHORT).show();
 
         cronometro.setBase(SystemClock.elapsedRealtime());
         cronometro.start(); //Inicia el cronometro
@@ -149,6 +150,10 @@ public class recorrido extends ActionBarActivity implements LocationListener {
     public void detenerRecorrido(View view) { //Esta función lanza la actividad "resumen_recorrido"
         cronometro.stop();
 
+        location2=locationManager.getLastKnownLocation(provider);
+        cadenalocation2= String.valueOf(location2.getAltitude());
+      //  Toast.makeText(getApplicationContext(),cadenalocation2,Toast.LENGTH_SHORT).show();
+
         ImageView androidImageField = (ImageView) findViewById(R.id.imagenEstadoRecorrido);
         iniciar.setEnabled(false);
         pausar.setEnabled(false);
@@ -171,12 +176,12 @@ public class recorrido extends ActionBarActivity implements LocationListener {
 
         //Calcular distancia recorrida
         distanciaEnMetros = location1.distanceTo(location2);
-        Toast.makeText(getApplicationContext(), distanciaEnMetros.toString(), Toast.LENGTH_SHORT).show();
+      //  Toast.makeText(getApplicationContext(), distanciaEnMetros.toString(), Toast.LENGTH_SHORT).show();
         pasarTiempo.putExtra("distanciaRecorrido", distanciaEnMetros);
 
         //Calcular la velocidad media
         velocidadMedia = distanciaEnMetros / tiempoTranscurrido;//metros por segundo
-        Toast.makeText(getApplicationContext(), velocidadMedia.toString(), Toast.LENGTH_SHORT).show();
+       // Toast.makeText(getApplicationContext(), velocidadMedia.toString(), Toast.LENGTH_SHORT).show();
         pasarTiempo.putExtra("velocidadMedia", velocidadMedia);
         startActivity(pasarTiempo);
     }
@@ -234,5 +239,31 @@ public class recorrido extends ActionBarActivity implements LocationListener {
 
     @Override
     public void onProviderDisabled(String s) {}
+
+
+    //metodos nuevos relacionados con ubicacion
+
+    public Float calcularDistancia(){
+        distanciaEnMetros = location1.distanceTo(location2);
+       // Toast.makeText(getApplicationContext(),distanciaEnMetros.toString(),Toast.LENGTH_SHORT).show();
+        return distanciaEnMetros;
+    }
+
+    public Float maximaAltitud(){
+        location2=locationManager.getLastKnownLocation(provider);
+        cadenalocation1= String.valueOf(location2.getAltitude());
+       // Toast.makeText(getApplicationContext(),cadenalocation2,Toast.LENGTH_SHORT).show();
+        return Float.parseFloat(cadenalocation1);
+    }
+
+    public  Float velocidadMedia(){
+        velocidadMedia=distanciaEnMetros/tiempoTranscurrido;//metros por segundo
+
+       // Toast.makeText(getApplicationContext(),velocidadMedia.toString(),Toast.LENGTH_SHORT).show();
+
+     return velocidadMedia;
+    }
+
+
 
 }
