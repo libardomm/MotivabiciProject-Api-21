@@ -3,6 +3,7 @@ package com.example.libardo.motivabiciproject;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -20,6 +21,7 @@ public class resumen_recorrido extends ActionBarActivity {
     TextView altitudMaxima;
     TextView distanciaRecorrida;
     Float dist;
+    String distanciaPro;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,6 +81,8 @@ public class resumen_recorrido extends ActionBarActivity {
         //CALCULO DE CALORIAS (Recibe el tiempo del recorrido desde la actividad "Recorrido")
         datos = getIntent().getExtras();
         tiempoRecorrido = datos.getString("tiempoRecorrido");
+        distanciaPro=datos.getString("distanciaRecorrida");
+        Log.i("distancia resumen", String.valueOf(distanciaPro));
         Double t = Double.parseDouble(tiempoRecorrido);
         Double cal = (Double)(8 * 70 * t); //70 es el peso de la persona. Este dato se debe traer de la base de datos
         DecimalFormat df = new DecimalFormat("0.00");
@@ -100,19 +104,22 @@ public class resumen_recorrido extends ActionBarActivity {
 
 
         //VER LA DISTANCIA RECORRIDA EN LA PANTALLA DE RESUMEN DEL RECORRIDO
-        recorrido rec=new recorrido();
+        //recorrido rec=new recorrido();
 
-        Float dist=rec.calcularDistancia();
-        distanciaRecorrido = datos.getString("distanciaRecorrido");
-        distanciaRecorrida.setText(dist+" [m]");
+        // float distan=rec.calcularDistancia();
+
+        //String distanciaRecorridoString = String.valueOf(distan);
+        distanciaRecorrida.setText(distanciaPro + " [m]");
+       // Log.i("distancia desde resumen",distanciaPro.toString());
 
         //VER LA VELOCIDAD MEDIA EN LA PANTALLA DE RESUMEN DEL RECORRIDO
         Double tiempoTotalSegundos;
         tiempoTotalSegundos=time;
         Double veloci;
-        veloci=dist/tiempoTotalSegundos;
-        //velocidadMedia = datos.getString("velocidadMedia");
-        velocidadPromedio.setText(veloci+" [m/s]");
+        float distanciaFloat= Float.parseFloat(distanciaPro);
+        veloci=distanciaFloat/tiempoTotalSegundos;
+
+        velocidadPromedio.setText(veloci.toString()+" [m/s]");
 
 
         //altitud
