@@ -25,8 +25,8 @@ public class recorrido extends ActionBarActivity implements LocationListener {
 
     LocationManager locationManager;
     String provider;
-    Location location1;
-    Location location2;
+    Location location1 = new Location("l1");
+    Location location2 = new Location("l2");
     String cadenalocation1;
     String cadenalocation2;
     String a;
@@ -249,12 +249,7 @@ public class recorrido extends ActionBarActivity implements LocationListener {
         return distanciaEnMetros;
     }
 
-    public Float maximaAltitud(){
-        location2=locationManager.getLastKnownLocation(provider);
-        cadenalocation1= String.valueOf(location2.getAltitude());
-       // Toast.makeText(getApplicationContext(),cadenalocation2,Toast.LENGTH_SHORT).show();
-        return Float.parseFloat(cadenalocation1);
-    }
+
 
     public  Float velocidadMedia(){
         velocidadMedia=distanciaEnMetros/tiempoTranscurrido;//metros por segundo

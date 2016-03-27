@@ -114,6 +114,9 @@ public class resumen_recorrido extends ActionBarActivity {
         //velocidadMedia = datos.getString("velocidadMedia");
         velocidadPromedio.setText(veloci+" [m/s]");
 
+
+        //altitud
+
         caloriasRecorrido.setEnabled(false);
         velocidadPromedio.setEnabled(false);
         duracionRecorrido.setEnabled(false);
