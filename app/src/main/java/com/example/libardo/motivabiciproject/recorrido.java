@@ -64,20 +64,20 @@ public class recorrido extends ActionBarActivity implements LocationListener {
         String altitud;
         altitud= String.valueOf(location.getAltitude());
         if (location != null) {
-            Toast.makeText(getApplicationContext(), "Si hay ubicacion", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(getApplicationContext(), "Si hay ubicacion", Toast.LENGTH_SHORT).show();
 
         } else {
-            Toast.makeText(getApplicationContext(), "No hay ubicacion", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(getApplicationContext(), "No hay ubicacion", Toast.LENGTH_SHORT).show();
 
         }
-        Toast.makeText(getApplicationContext(),"Altitud es "+String.valueOf(location.getAltitude()),Toast.LENGTH_SHORT);
+       //Toast.makeText(getApplicationContext(),"Altitud es "+String.valueOf(location.getAltitude()),Toast.LENGTH_SHORT);
     }
 
     public void iniciarRecorrido(View view) {
 
         location1=locationManager.getLastKnownLocation(provider);
         cadenalocation1= String.valueOf(location1.getLatitude());
-        Toast.makeText(getApplicationContext(),"location 1 Latitud"+cadenalocation1,Toast.LENGTH_SHORT).show();
+       // Toast.makeText(getApplicationContext(),"location 1 Latitud"+cadenalocation1,Toast.LENGTH_SHORT).show();
 
         cronometro.setBase(SystemClock.elapsedRealtime());
         cronometro.start(); //Inicia el cronometro
@@ -155,11 +155,11 @@ public class recorrido extends ActionBarActivity implements LocationListener {
 
         location2=locationManager.getLastKnownLocation(provider);
         cadenalocation2= String.valueOf(location2.getLatitude());
-        Toast.makeText(getApplicationContext(),"loction 2, latitud"+cadenalocation2,Toast.LENGTH_SHORT).show();
+       // Toast.makeText(getApplicationContext(),"loction 2, latitud"+cadenalocation2,Toast.LENGTH_SHORT).show();
 
 
         distanciaPro = location1.distanceTo(location2);
-        Toast.makeText(getApplicationContext(),"distancia "+distanciaPro,Toast.LENGTH_SHORT).show();
+       // Toast.makeText(getApplicationContext(),"distancia "+distanciaPro,Toast.LENGTH_SHORT).show();
         Log.i("distancia para yurs", String.valueOf(distanciaPro));
 
         ImageView androidImageField = (ImageView) findViewById(R.id.imagenEstadoRecorrido);
