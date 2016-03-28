@@ -90,7 +90,7 @@ public class resumen_recorrido extends ActionBarActivity {
         DecimalFormat df = new DecimalFormat("0.00");
         String sPi=df.format(cal);
         String caloriasQuemadas = sPi.toString();
-        caloriasRecorrido.setText(caloriasQuemadas + " [cal]");
+        caloriasRecorrido.setText(caloriasQuemadas + " [cal]");//----------------------------------------------------------------------------CALORIIAS
 
         //CALCULO DE DURACIÓN DEL RECORRIDO
         Double time = (Double) (t / 0.000277778);
@@ -102,7 +102,7 @@ public class resumen_recorrido extends ActionBarActivity {
         String Minutos = df2.format(minutos);
         String Segundos = df2.format(segundos);
         duracionRecorrido.setText(Horas + " h: "+ Minutos + " min: " + Segundos + " seg");
-
+       String tiempoPro=Horas + " h: "+ Minutos + " min: " + Segundos + " seg";//--------------------------------------------------------- TIEMPO PROMEDIO.
 
 
         //VER LA DISTANCIA RECORRIDA EN LA PANTALLA DE RESUMEN DEL RECORRIDO
@@ -111,7 +111,7 @@ public class resumen_recorrido extends ActionBarActivity {
         // float distan=rec.calcularDistancia();
 
         //String distanciaRecorridoString = String.valueOf(distan);
-        distanciaRecorrida.setText(distanciaPro + " [m]");
+        distanciaRecorrida.setText(distanciaPro + " [m]");//-------------------------------------------------------------------------------DISTANCIA RECORRIDA
        // Log.i("distancia desde resumen",distanciaPro.toString());
 
         //VER LA VELOCIDAD MEDIA EN LA PANTALLA DE RESUMEN DEL RECORRIDO
@@ -121,11 +121,11 @@ public class resumen_recorrido extends ActionBarActivity {
         float distanciaFloat= Float.parseFloat(distanciaPro);
         veloci=distanciaFloat/tiempoTotalSegundos;
 
-        velocidadPromedio.setText(veloci.toString()+" [m/s]");
+        velocidadPromedio.setText(veloci.toString()+" [m/s]");//--------------------------------------------------------------------------VELOCIDAD PROMEDIO
 
 
         //altitud
-        altitudMaxima.setText(altitudString+" [m]");
+        altitudMaxima.setText(altitudString+" [m]");//-----------------------------------------------------------------------------------ALITUD MAXIMA
 
         caloriasRecorrido.setEnabled(false);
         velocidadPromedio.setEnabled(false);
