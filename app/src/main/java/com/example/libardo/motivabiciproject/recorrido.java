@@ -33,6 +33,7 @@ public class recorrido extends ActionBarActivity implements LocationListener {
     Float velocidadMedia;
     Float distanciaEnMetros;
     float distanciaPro;
+    float altitudMaxima;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -183,6 +184,12 @@ public class recorrido extends ActionBarActivity implements LocationListener {
 
         pasarTiempo.putExtra("distanciaRecorrida", distanciaPro1);
         startActivity(pasarTiempo);
+
+        String altitudString= String.valueOf(location1.getAltitude());
+
+        pasarTiempo.putExtra("altitudRecorrido", altitudString);
+        startActivity(pasarTiempo);
+        Log.i("Altitud en Recorrido",altitudString);
 
         //Envía el tiempo del recorrido a la actividad "Resumen recorrido"
        /* Intent pasarDistancia = new Intent(recorrido.this, resumen_recorrido.class);

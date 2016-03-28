@@ -22,6 +22,7 @@ public class resumen_recorrido extends ActionBarActivity {
     TextView distanciaRecorrida;
     Float dist;
     String distanciaPro;
+    String altitudString;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,7 +83,8 @@ public class resumen_recorrido extends ActionBarActivity {
         datos = getIntent().getExtras();
         tiempoRecorrido = datos.getString("tiempoRecorrido");
         distanciaPro=datos.getString("distanciaRecorrida");
-        Log.i("distancia resumen", String.valueOf(distanciaPro));
+        altitudString=datos.getString("altitudRecorrido");
+        Log.i("altitud en resumen", String.valueOf(altitudString));
         Double t = Double.parseDouble(tiempoRecorrido);
         Double cal = (Double)(8 * 70 * t); //70 es el peso de la persona. Este dato se debe traer de la base de datos
         DecimalFormat df = new DecimalFormat("0.00");
@@ -123,6 +125,7 @@ public class resumen_recorrido extends ActionBarActivity {
 
 
         //altitud
+        altitudMaxima.setText(altitudString+" [m]");
 
         caloriasRecorrido.setEnabled(false);
         velocidadPromedio.setEnabled(false);
