@@ -65,6 +65,7 @@ public class ubicacion extends ActionBarActivity implements LocationListener {
             Toast.makeText(getApplicationContext(), "Si hay ubicacion", Toast.LENGTH_SHORT).show();
 
         }
+
         //tiempo
         cronometro = (Chronometer) findViewById(R.id.cronometro);
 
