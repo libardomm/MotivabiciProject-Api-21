@@ -22,10 +22,11 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
         //aquí creamos la tabla de usuario (dni, nombre, ciud
         //ad, numero)
         db.execSQL(DataBaseManager.CREATE_TABLE_USUARIOS);
+        db.execSQL(DataBaseManager.CREATE_TABLE_RECORRIDOS);
     }
     @Override
     public void onUpgrade(SQLiteDatabase db, int version1, int version2) {
-        db.execSQL("drop table if exists usuarios");
+        db.execSQL(DataBaseManager.DROP_TABLE_USUARIOS);
         db.execSQL(DataBaseManager.CREATE_TABLE_USUARIOS);
     }
 }

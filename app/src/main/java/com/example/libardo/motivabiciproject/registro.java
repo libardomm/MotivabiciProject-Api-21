@@ -54,7 +54,7 @@ public class registro extends ActionBarActivity {
         registro.put("peso", peso);
 
         // los inserto en la base de datos
-        bd.insert("usuario", null, registro);
+        bd.insert("usuarios", null, registro);
         bd.close();
 
         // ponemos los campos a vacío para insertar el siguiente usuario

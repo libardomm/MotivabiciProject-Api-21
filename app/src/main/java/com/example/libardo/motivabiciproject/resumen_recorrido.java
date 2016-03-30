@@ -1,5 +1,6 @@
 package com.example.libardo.motivabiciproject;
 
+import android.content.ContentValues;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -106,6 +107,10 @@ public class resumen_recorrido extends ActionBarActivity {
         duracionRecorrido.setEnabled(false);
         altitudMaxima.setEnabled(false);
         distanciaRecorrida.setEnabled(false);
+
+        //Agregar valores a la base de datos
+
+
 
     }
 
